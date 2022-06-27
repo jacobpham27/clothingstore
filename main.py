@@ -17,6 +17,7 @@ def root():
 def cart():
     return 'Shopping cart coming soon.'
 
+### Runs project on 127.0.0.1:8080 when running locally ###
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
