@@ -13,9 +13,9 @@ def root():
 # cart()
 # items()
 
-# @app.route('/cart')
-# def cart():
-#     todo
+@app.route('/cart')
+def cart():
+    return 'Shopping cart coming soon.'
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
