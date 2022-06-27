@@ -6,13 +6,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
-                   datetime.datetime(2018, 1, 2, 10, 30, 0),
-                   datetime.datetime(2018, 1, 3, 11, 0, 0),
-                   ]
-
+# display advertisements from database
+# maybe add featured field to item to display on root
+# prices are stored without decimals, ex 13.99 -> 1399 in database
     return render_template('index.html', times=dummy_times)
+# cart()
+# items()
 
+# @app.route('/cart')
+# def cart():
+#     todo
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
