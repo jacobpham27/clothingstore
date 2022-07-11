@@ -4,13 +4,23 @@
   <title>Hello World</title>
 </head>
 <body>
-    <ul>
-        <li>Alexander Rohrig</li>
-        <li>Bryan Guzman</li>
-        <li>Jacob Pham</li>
-    </ul>
-
-  <h1>Hello World</h1>
-
+<!-- Header -->
+    <div>
+        <ul>
+            <li><a>New & Featured</a></li>
+            <li><a>Men</a></li>
+            <li><a>Women</a></li>
+            <li><a>Kids</a></li>
+            <li><a>Sale</a></li>
+        </ul>
+    </div>
+<!-- Ads -->
+    {% for x in results %}
+    <div>
+        <img src="/static/{{ x.id }}.png">
+        <p>{{ x.description }}</p>
+        <p><a href="{{ x.link }}">Shop Now</a></p>
+    </div>
+    {% endfor %}
 </body>
 </html>

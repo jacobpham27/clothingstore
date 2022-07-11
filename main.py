@@ -1,21 +1,84 @@
 import datetime
-
+import uuid
+from datetime import datetime
+# from google.cloud import firestore
+# from firebase_admin import credentials
+# from firebase_admin import firestore
+# from google.appengine.ext import db
+from google.cloud import datastore
+# from google.appengine.api import users
+# from google.appengine.ext.db import stats
+# import google
 from flask import Flask, render_template
 
 app = Flask(__name__)
+datastore_client = datastore.Client()
+
+# class item(db.Model):
+#     category = db.StringProperty()
+#     description = db.StringProperty()
+#     gender = db.StringProperty()
+#     id = db.StringProperty()
+#     name = db.StringProperty()
+#     price = db.IntegerProperty()
+#     published = db.BooleanProperty()
+#     soldOut = db.BooleanProperty()
+#     
+# class advertisement(db.Model):
+#     description = db.StringProperty()
+#     id = db.StringProperty()
+#     link = db.StringProperty()
+#     published = db.BooleanProperty()
+
+# R1 #
 
 @app.route('/')
 def root():
-# display advertisements from database
-# maybe add featured field to item to display on root
-# prices are stored without decimals, ex 13.99 -> 1399 in database
-    return render_template('index.html', times=dummy_times)
-# cart()
-# items()
+    query = datastore_client.query(kind='advertisement')
+    results = list(query.fetch())
+    print(results)
+    return render_template('index.html', results=results)
 
+# ITEMS/FILTER
+@app.route('/items/<category>')
+def i_c(category):
+    query = datastore_client.query(kind='item')
+    query.add_filter('category', '=', category)
+    results = list(query.fetch())
+    print(results)
+    return render_template('detail.html', results=results, title=category)
+
+# ITEM INFO
+@app.route('/item/<id>')
+def i_i(id):
+    query = datastore_client.query(kind='item')
+    query.add_filter('id', '=', id)
+    results = list(query.fetch())
+    print(results)
+    return render_template('item_detail.html', results=results)
+    
+@app.route('/item/description/<id>')
+def i_d_i(id):
+    query = datastore_client.query(kind='item')
+    query.add_filter('id', '=', id)
+    results = list(query.fetch())
+    print(results)
+    return render_template('item_description.html', results=results)
+
+## R2 ##
+
+# ITEM IMAGES/ALTERNATIVE ITEM DISPLAY
+# @app.route('/')
+
+# SHOPPING CART
 @app.route('/cart')
 def cart():
     return 'Shopping cart coming soon.'
+
+# ORDER STATUS
+@app.route('/order')
+def order():
+    return 'Order Status coming soon'
 
 ### Runs project on 127.0.0.1:8080 when running locally ###
 if __name__ == '__main__':

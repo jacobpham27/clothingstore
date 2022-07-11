@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <title>[Category Name]</title>
+</head>
+<body>
+<!-- Header -->
+<!-- Sidebar -->
+    <div>
+        <h1>{{ title }} ({{ results|length }})</h1>
+        <ul>
+            <li><a href="/items/top">Tops</a></li>
+            <li><a href="/items/bottom">Bottoms</a></li>
+            <li><a href="/items/shoe">Shoes</a></li>
+        </ul>
+    </div>
+<!-- Items -->
+    <div>
+        {% for x in results %}
+<!--         <img src="{{ url_for('static', filename='1997-ec.gif') }}"> -->
+        <img src="/static/{{ x.id }}.png">
+        <p><a href="/item/{{ x.id }}">{{ x.name }}</a></p>
+        <p>{{ x.category }}</p>
+        <p>{{ x.price }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
