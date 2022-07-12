@@ -1,18 +1,27 @@
 <!doctype html>
 <html>
 <head>
-  <title>Clothing Store</title>
+  <title>Wajdi's Warehouse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <!-- Header -->
     <div>
+        <div class="box1">
+        <img src="Wajdi's Warehouse Logo.jpeg"
+        width="100"
+        height="50"
+        align="left" />
         <ul>
-            <li><a>New & Featured</a></li>
-            <li><a>Men</a></li>
-            <li><a>Women</a></li>
-            <li><a>Kids</a></li>
-            <li><a>Sale</a></li>
+          <li><a href="/items/new">News & Featured</a></li>
+          <li><a href="/items/men">Men</a></li>
+          <li><a href="/items/women">Women</a></li>
+          <li><a href="/items/kid">Kids</a></li>
+          <li><a href="/items/sale">Sale</a></li>
         </ul>
+        <input type="text" placeholder="Search...">
+        </div>
+        <i class="fa fa-shopping-cart"></i>
     </div>
 <!-- Ads -->
     {% for x in results %}

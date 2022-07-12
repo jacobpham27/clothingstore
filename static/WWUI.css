@@ -1,0 +1,51 @@
+body{
+  background-color: #f8f8ff;
+}
+.box1{
+  border: 1px solid #f8f8ff;
+  background-color: #f8f8ff;
+  height: 50px;
+
+}
+
+ul{
+  float: left;
+  color: black;
+}
+
+ul li{
+  margin-top: -5px;
+  float: left;
+  position: relative;
+  left: 40%;
+  width: 110px;
+  font-size: 14px;
+  font-family: barlow condensed, sans-serif;
+  list-style-type: none;
+  text-align:center;
+}
+
+ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.box1 input[type=text]{
+  float: right;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 100px;
+  font-size: 14px;
+}
+
+i.fa fa-shopping-cart{
+  float:right;
+  margin-top: 5px;
+  margin-right: 100px;
+}
+
+
+/*{
+  border-width: 1px;
+  border-style: solid;
+}*/
