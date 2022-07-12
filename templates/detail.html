@@ -17,11 +17,12 @@
 <!-- Items -->
     <div>
         {% for x in results %}
-<!--         <img src="{{ url_for('static', filename='1997-ec.gif') }}"> -->
+        <div>
         <img src="/static/{{ x.id }}.png">
         <p><a href="/item/{{ x.id }}">{{ x.name }}</a></p>
         <p>{{ x.category }}</p>
         <p>{{ x.price }}</p>
+        <div></div>
         {% endfor %}
     </div>
 </body>

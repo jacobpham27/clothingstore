@@ -1,3 +1,4 @@
 Flask==2.1.2
+protobuf==3.20.1
 appengine-python-standard>=1.0.0
 google-cloud-datastore
