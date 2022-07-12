@@ -55,7 +55,7 @@ def i_i(id):
     query.add_filter('id', '=', id)
     results = list(query.fetch())
     print(results)
-    return render_template('item_detail.html', results=results)
+    return render_template('item_detail.html', result=results[0])
     
 @app.route('/item/description/<id>')
 def i_d_i(id):
@@ -63,7 +63,7 @@ def i_d_i(id):
     query.add_filter('id', '=', id)
     results = list(query.fetch())
     print(results)
-    return render_template('item_description.html', results=results)
+    return render_template('item_description.html', result=results[0])
 
 ## R2 ##
 

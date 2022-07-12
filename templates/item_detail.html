@@ -1,24 +1,22 @@
-{% for x in results %}
 <!doctype html>
 <html>
 <head>
-  <title>{{ x.name }}</title>
+  <title>{{ result.name }}</title>
 </head>
 <body>
 <!-- Header -->
 <!-- Image -->
     <div>
-        <img src="/static/{{ x.id }}.png">
-        <p><a href="/item/images/{{ x.id }}">View more images</a></p>
+        <img src="/static/{{ result.id }}.png">
+        <p><a href="/item/images/{{ result.id }}">View more images</a></p>
     </div>
 <!-- Item Info -->
     <div>
-        <h2>{{ x.name }}</h2>
-        <h3>{{ x.category }}</h3>
-        <p>Style: {{ x.id }}</p>
+        <h2>{{ result.name }}</h2>
+        <h3>{{ result.category }}</h3>
+        <p>Style: {{ result.id }}</p>
         <button type="button">Add to Cart</button>
-        <p><a href="/item/description/{{ x.id }}">Read more about this item.</a></p>
+        <p><a href="/item/description/{{ result.id }}">Read more about this item.</a></p>
     </div>
 </body>
 </html>
-{% endfor %}
