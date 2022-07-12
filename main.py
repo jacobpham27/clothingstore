@@ -77,7 +77,7 @@ def cart():
 
 # ORDER STATUS
 @app.route('/order')
-def order():
+def orderStatus():
     return 'Order Status coming soon'
 
 ### Runs project on 127.0.0.1:8080 when running locally ###
