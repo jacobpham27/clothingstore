@@ -1,18 +1,16 @@
-{% for x in results %}
 <!doctype html>
 <html>
 <head>
-  <title>{{ x.name }}</title>
+  <title>{{ result.name }}</title>
 </head>
 <body>
 <!-- Header -->
 <!-- Item Info -->
     <div>
-        <h2>{{ x.name }}</h2>
-        <h3>{{ x.gender }} {{ x.category }}</h3>
-        <p>Style: {{ x.id }}</p>
-        <p>{{ x.description }}</p>
+        <h2>{{ result.name }}</h2>
+        <h3>{{ result.gender }} {{ result.category }}</h3>
+        <p>Style: {{ result.id }}</p>
+        <p>{{ result.description }}</p>
     </div>
 </body>
 </html>
-{% endfor %}
