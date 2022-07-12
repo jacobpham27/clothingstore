@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Wajdi's Warehouse</title>
+  <link rel="stylesheet" type="text/css" href="/static/WWUI.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <!-- Header -->
     <div>
         <div class="box1">
-        <img src="Wajdi's Warehouse Logo.jpeg"
+        <img src="ww_logo.jpeg"
         width="100"
         height="50"
         align="left" />
@@ -20,8 +21,8 @@
           <li><a href="/items/sale">Sale</a></li>
         </ul>
         <input type="text" placeholder="Search...">
+        <a href="/cart" class="fa fa-shopping-cart"></a>
         </div>
-        <i class="fa fa-shopping-cart"></i>
     </div>
 <!-- Ads -->
     {% for x in results %}
