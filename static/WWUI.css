@@ -30,7 +30,7 @@ ul li a{
   color: black;
 }
 
-.box1 input[type=text]{
+.header input[type=text]{
   float: right;
   padding: 5px;
   margin-top: 5px;
