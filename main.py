@@ -55,6 +55,7 @@ def itemsUsingQuery():
     query = datastore_client.query(kind='item')
     query.add_filter('category', '=', category)
     query.add_filter('gender', '=', gender)
+    results = list(query.fetch())
     print(results)
     return render_template('detail.html', results=results, title=category)
 
@@ -78,7 +79,9 @@ def i_d_i(id):
 ## R2 ##
 
 # ITEM IMAGES/ALTERNATIVE ITEM DISPLAY
-# @app.route('/')
+@app.route('/item/images/<id>')
+def i_i_i(id):
+    return id
 
 # SHOPPING CART
 @app.route('/cart')
