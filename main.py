@@ -9,7 +9,7 @@ from google.cloud import datastore
 # from google.appengine.api import users
 # from google.appengine.ext.db import stats
 # import google
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 datastore_client = datastore.Client()
@@ -45,6 +45,16 @@ def i_c(category):
     query = datastore_client.query(kind='item')
     query.add_filter('category', '=', category)
     results = list(query.fetch())
+    print(results)
+    return render_template('detail.html', results=results, title=category)
+    
+@app.route('/items')
+def itemsUsingQuery():
+    category = request.args.get('category')
+    gender = request.args.get('gender')
+    query = datastore_client.query(kind='item')
+    query.add_filter('category', '=', category)
+    query.add_filter('gender', '=', gender)
     print(results)
     return render_template('detail.html', results=results, title=category)
 
