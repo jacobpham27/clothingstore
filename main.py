@@ -53,8 +53,10 @@ def itemsUsingQuery():
     category = request.args.get('category')
     gender = request.args.get('gender')
     query = datastore_client.query(kind='item')
-    query.add_filter('category', '=', category)
-    query.add_filter('gender', '=', gender)
+    if category is not None:
+        query.add_filter('category', '=', category)
+    if gender is not None:
+        query.add_filter('gender', '=', gender)
     results = list(query.fetch())
     print(results)
     return render_template('detail.html', results=results, title=category)
@@ -92,6 +94,10 @@ def cart():
 @app.route('/order')
 def orderStatus():
     return 'Order Status coming soon'
+    
+@app.route('/search')
+def search():
+    return 
 
 ### Runs project on 127.0.0.1:8080 when running locally ###
 if __name__ == '__main__':
