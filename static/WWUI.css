@@ -59,6 +59,15 @@ a {
   }
 }
 
+#shoppingcart {
+  float: right;
+  position: relative;
+  top: -30px;
+  color: black;
+  text-decoration: none;
+  margin: 0px 15px;
+}
+
 .container{
   max-width: 1200px;
   margin: 0 auto;
