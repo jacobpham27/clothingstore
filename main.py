@@ -83,21 +83,28 @@ def i_d_i(id):
 # ITEM IMAGES/ALTERNATIVE ITEM DISPLAY
 @app.route('/item/images/<id>')
 def i_i_i(id):
+    query = datastore_client.query(kind='itemImage')
+    query.add_filter('parent', '=', id)
+    results = list(query.fetch())
+    print(results)
     return id
 
 # SHOPPING CART
 @app.route('/cart')
 def cart():
-    return 'Shopping cart coming soon.'
+    return render_template('cart.html')
 
 # ORDER STATUS
 @app.route('/order/<id>')
-def orderStatus():
+def orderStatus(id):
     query = datastore_client.query(kind='order')
-    query.add_filter('id', '=', id)
-    results = list(query.fetch)
+    query.add_filter('orderID', '=', id)
+    results = list(query.fetch())
     print(results)
-    return render_template('order.html', res=results)
+    if not results:
+        return 'Order not found. Double check order number.'
+    else:
+        return render_template('order.html', res=results)
     
 @app.route('/search')
 def search():
