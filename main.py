@@ -91,9 +91,13 @@ def cart():
     return 'Shopping cart coming soon.'
 
 # ORDER STATUS
-@app.route('/order')
+@app.route('/order/<id>')
 def orderStatus():
-    return 'Order Status coming soon'
+    query = datastore_client.query(kind='order')
+    query.add_filter('id', '=', id)
+    results = list(query.fetch)
+    print(results)
+    return render_template('order.html', res=results)
     
 @app.route('/search')
 def search():
