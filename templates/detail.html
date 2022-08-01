@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <title>{{ title }}</title>
    <link rel="stylesheet" type="text/css" href="/static/WWUI.css">
@@ -8,7 +8,7 @@
 <body>
 <!-- Header -->
   <div class="header">
-    <a href="/" ><img id= "logo" src="/static/ww_logo.jpeg"
+    <a href="/" ><img id= "logo" alt="WW logo" src="/static/ww_logo.jpeg"
       width="100"
       height="50"
     /> </a>
@@ -22,7 +22,7 @@
       </ul>  
     </div>
     <a href="/cart" class="fa fa-shopping-cart" id="shoppingcart"> </a>
-    <input type="text" placeholder="Search...">
+    <input type="text" placeholder="Search..." title="Search">
   </div>
   
 <!-- Sidebar -->
@@ -37,7 +37,7 @@
       {% for x in results %}
       <li>
       <div class="item">
-        <a href="/item/{{ x.id }}"><img src="/static/{{ x.id }}.png"></a>
+        <a href="/item/{{ x.id }}"><img src="/static/{{ x.id }}.png" alt="{{ x.name }}"></a>
         <p><a href="/item/{{ x.id }}">{{ x.name }}</a></p>
         <p>${{ x.price }}</p>
       </div>

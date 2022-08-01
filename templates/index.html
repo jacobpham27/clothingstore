@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <title>Wajdi's Warehouse</title>
   <link rel="stylesheet" type="text/css" href="/static/WWUI.css">
@@ -22,7 +22,7 @@
         </ul>
       </div>
       <a href="/cart" class="fa fa-shopping-cart" id="shoppingcart"></a>
-      <input type="text" placeholder="Search...">
+      <input type="text" placeholder="Search..." title="Search">
     </div>
   
 <!-- Subheading -->
@@ -34,7 +34,7 @@
   <div class="main">
     {% for x in results %}
     <div class="ad">
-      <a href="{{ x.link }}"><img src="/static/{{ x.id }}.png"></a>
+      <a href="{{ x.link }}"><img src="/static/{{ x.id }}.png" alt="{{ x.description }}"></a>
         <p>{{ x.description }}</p>
     </div>
     <div class="shopButton">

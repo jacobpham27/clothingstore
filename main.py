@@ -108,7 +108,7 @@ def orderStatus(id):
     
 @app.route('/search')
 def search():
-    return 
+    return 'Search coming soon'
 
 ### Runs project on 127.0.0.1:8080 when running locally ###
 if __name__ == '__main__':
