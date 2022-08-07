@@ -16,6 +16,8 @@ a {
   text-decoration: none;
 }
 
+/* Header */
+
 .header {
   background-color: #F2F2F2;
   width: 100%;
@@ -67,6 +69,8 @@ a {
   text-decoration: none;
   margin: 0px 15px;
 }
+
+/* Shopping cart page */
 
 .container{
   max-width: 1200px;
@@ -188,6 +192,8 @@ a {
   }
 }
 
+/* Sidebar on detail.html page */
+
 .sidebar {
   height: 100%;
   width: 160px;
@@ -209,6 +215,8 @@ a {
   background-color: black;
   color: white;
 }
+
+/* Ad section in index.html */
 
 .main {
   position: relative;
@@ -245,6 +253,8 @@ a {
   margin: 20px;
 }
 
+/* Items grid in detail.html */
+
 .items ul {
   text-align: center;
   position: relative;
@@ -259,6 +269,8 @@ a {
   margin: 30px;
   list-style-type: none;
 }
+
+/* Individual item in detail.html */
 
 .item {
   width: 255px;
@@ -278,6 +290,59 @@ a {
 .item p {
   margin: 10px;
 }
+
+/* Main section in item_detail.html */
+
+.itemContent a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
+
+.itemContent a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+.itemContent p {
+  margin: 20px;
+}
+
+.itemContent table {
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+}
+
+.itemContent td {
+  text-align: center;
+}
+
+.itemPic {
+  display: inline-block;
+}
+
+.itemContent .itemPic img {
+  width: 432px;
+  height: 540px;
+}
+
+.itemInfo {
+  display: inline-block;
+  position: relative;
+  bottom: 100px;
+}
+
+.itemContent img {
+  display: inline-block;
+  width: 691px;
+  height: 864px;
+  margin-bottom: 20px;
+  margin-right: 100px;
+}
+
+/* Footer */
 
 .footer {
   background: black;
