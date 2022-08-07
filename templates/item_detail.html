@@ -2,21 +2,60 @@
 <html>
 <head>
   <title>{{ result.name }}</title>
+  <link rel="stylesheet" type="text/css" href="/static/WWUI.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <!-- Header -->
+  <div class="header">
+        <a href="/"><img id="logo" src="/static/ww_logo.jpeg"
+        width="100"
+        height="50"
+        /></a>
+        <div class="navbar">
+            <ul>
+            <li><a href="/items/new">News & Featured</a></li>
+            <li><a href="/items?gender=M">Men</a></li>
+            <li><a href="/items?gender=W">Women</a></li>
+            <li><a href="/items/kid">Kids</a></li>
+            <li><a href="/items/sale">Sale</a></li>
+            </ul>
+        </div>
+        <a href="/cart" class="fa fa-shopping-cart" id="shoppingcart"></a>
+        <input type="text" placeholder="Search..." title="Search">
+    </div>
+   <div class="itemContent">  
 <!-- Image -->
-    <div>
-        <img src="/static/{{ result.id }}.png">
-        <p><a href="/item/images/{{ result.id }}">View more images</a></p>
-    </div>
+     <table>
+       <tr>
+         <td>
+          <div class="itemPic">
+              <img src="/static/{{ result.id }}.png">
+              <p><a href="/item/images/{{ result.id }}">View more images</a></p>
+          </div>
+         </td>
 <!-- Item Info -->
-    <div>
-        <h2>{{ result.name }}</h2>
-        <h3>{{ result.category }}</h3>
-        <p>Style: {{ result.id }}</p>
-        <button type="button">Add to Cart</button>
-        <p><a href="/item/description/{{ result.id }}">Read more about this item.</a></p>
-    </div>
+         <td>
+          <div class="itemInfo">
+              <h2>{{ result.name }}</h2>
+              <p>Style: {{ result.id }}</p>
+              <button type="button">Add to Cart</button>
+              <p><a href="/item/description/{{ result.id }}">Read more about this item.</a></p>
+          </div>
+         </td>
+       </tr>
+     </table>
+  </div>
+  
+<!-- Footer -->
+  <div class="footer">
+      <ul> 
+      <li>Order Status</li>
+      <li>Shipping and Delivery</li>
+      <li>Returns</li>
+      <li>About Us</li>
+      <li>Contact Us</li>
+      </ul> 
+  </div> 
 </body>
 </html>
