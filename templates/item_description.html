@@ -1,16 +1,51 @@
 <!doctype html>
 <html>
-<head>
-  <title>{{ result.name }}</title>
-</head>
-<body>
-<!-- Header -->
-<!-- Item Info -->
-    <div>
-        <h2>{{ result.name }}</h2>
-        <h3>{{ result.gender }} {{ result.category }}</h3>
-        <p>Style: {{ result.id }}</p>
-        <p>{{ result.description }}</p>
+  <head>
+    <title>{{ result.name }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/WWUI.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <!-- Header -->
+     <div class="header">
+      <a href="/"><img id="logo" src="/static/ww_logo.jpeg"
+      width="100"
+      height="50"
+      /></a>
+      <div class="navbar">
+        <ul>
+          <li><a href="/items/new">News & Featured</a></li>
+          <li><a href="/items?gender=M">Men</a></li>
+          <li><a href="/items?gender=W">Women</a></li>
+          <li><a href="/items/kid">Kids</a></li>
+          <li><a href="/items/sale">Sale</a></li>
+        </ul>
+      </div>
+      <a href="/cart" class="fa fa-shopping-cart" id="shoppingcart"></a>
+      <input type="text" placeholder="Search..." title="Search">
     </div>
-</body>
+  <!-- Item Info -->
+      <div class="mainSection">
+        <div>
+          <a href="/item/{{ result.id }}"> Go back</a>
+        </div>
+        <div class="description">
+          <img src="/static/{{ result.id }}.png">
+          <h2>{{ result.name }}</h2>
+          <h3>{{ result.gender }} {{ result.category }}</h3>
+          <p>Style: {{ result.id }}</p>
+          <p>{{ result.description }}</p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <ul> 
+        <li>Order Status</li>
+        <li>Shipping and Delivery</li>
+        <li>Returns</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul> 
+    </div> 
+  </body>
 </html>
