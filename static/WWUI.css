@@ -127,7 +127,7 @@ a {
   position: absolute;
   right: 20px;
   padding: 10px 25px;
-  background color: white;
+  background-color: white;
   color: black;
   cursor: pointer;
   border-radius: 5px;
@@ -342,10 +342,52 @@ a {
   margin-right: 100px;
 }
 
-/* Footer */
+/* main part of item_description.html */
 
+.mainSection {
+  position: relative;
+  top: 200px;
+  margin-bottom: 350px;
+}
+
+.mainSection a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  left: 200px;
+}
+
+.mainSection a:hover {
+  color: white;
+  background-color: black;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.description {
+  margin: 0 auto;
+  width: 400px;
+  background-color:  rgb(234, 234, 234);
+  padding: 50px;
+}
+
+.description p {
+  margin: 10px 0px;
+}
+
+.description h2 {
+  margin: 10px 0px;
+}
+
+.description img {
+  display: inline-block;
+  width: 60px;
+  height: 76px;
+}
+
+/* Footer */
 .footer {
-  background: black;
+  background-color: black;
   color: rgb(165, 163, 163);
   position: relative;
   bottom: 0;
