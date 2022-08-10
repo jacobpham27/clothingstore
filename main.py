@@ -103,7 +103,7 @@ def orderStatus(id):
     results = list(query.fetch())
     print(results)
     if not results:
-        return 'Order not found. Double check order number.'
+        return "Order not found"
     else:
         return render_template('order.html', result=results[0])
     
