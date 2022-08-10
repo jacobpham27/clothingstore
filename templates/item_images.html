@@ -1,14 +1,15 @@
 <!doctype html>
 <html>
 <head>
-  <title>Hello World</title>
+  <title>Wajdi's Warehouse</title>
 </head>
 <body>
+    <div class="images">
     <ul>
-        <li>Alexander Rohrig</li>
-        <li>Bryan Guzman</li>
-        <li>Jacob Pham</li>
+        {% for x in results %}
+        <li class="image"><img src="/static/{{ x.parent }}_{{ x.index }}.png"></li>
+        {% endfor %}
     </ul>
-
+    </div>
 </body>
 </html>

@@ -87,11 +87,12 @@ def i_i_i(id):
     query.add_filter('parent', '=', id)
     results = list(query.fetch())
     print(results)
-    return id
+    return render_template('item_images.html', results=results)
 
 # SHOPPING CART
 @app.route('/cart')
 def cart():
+#     return 'Cart coming soon'
     return render_template('cart.html')
 
 # ORDER STATUS
@@ -104,7 +105,7 @@ def orderStatus(id):
     if not results:
         return 'Order not found. Double check order number.'
     else:
-        return render_template('order.html', res=results)
+        return render_template('order.html', result=results[0])
     
 @app.route('/search')
 def search():

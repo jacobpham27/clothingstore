@@ -13,13 +13,10 @@
       height="50"
     /> </a>
     <div class="navbar">
-      <ul> 
-<!--        <li><a href="/items/new">New & Featured</a></li>-->
-        <li><a href="/items?gender=M">Men</a></li>
-        <li><a href="/items?gender=W">Women</a></li>
-<!--        <li><a href="/items/kid">Kids</a></li>-->
-<!--        <li><a href="/items/sale">Sale</a></li>-->
-      </ul>
+      <ul>
+        <li><a href="/items/men">Men</a></li>
+        <li><a href="/items/women">Women</a></li>
+      </ul>  
     </div>
     <a href="/cart" class="fa fa-shopping-cart" id="shoppingcart"> </a>
     <input type="text" placeholder="Search..." title="Search">
@@ -31,28 +28,27 @@
     <a href="/items/bottom">Bottoms</a>
     <a href="/items/shoe">Shoes</a>
   </div>
-<!-- Items -->
-  <div class="items">
-    <ul>
-      {% for x in results %}
-      <li>
-      <div class="item">
-        <a href="/item/{{ x.id }}"><img src="/static/{{ x.id }}.png" alt="{{ x.name }}"></a>
-        <p><a href="/item/{{ x.id }}">{{ x.name }}</a></p>
-        <p>${{ x.price }}</p>
-      </div>
-      </li>
-      {% endfor %}
-    </ul>
+<!-- Order -->
+  <div class="order">
+    <table class="order_table">
+      <tr>
+        <th>Name</th>
+        <th>Order Number</th>
+        <th>Status</th>
+        <th>Shipping Address</th>
+      </tr>
+      <tr>
+        <td>{{ result.name }}</td>
+        <td>{{ result.orderID}}</td>
+        <td>{{ result.status }}</td>
+        <td>{{ result.shippingAddress }}</td>
+      </tr>
+    </table>
   </div>
   <!-- <footer> -->
   <div class="footer">    
     <ul> 
       <li>Order Status</li>
-      <li>Shipping and Delivery</li>
-      <li>Returns</li>
-      <li>About Us</li>
-      <li>Contact Us</li>
     </ul> 
   </div>
 </body>
